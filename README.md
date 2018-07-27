@@ -179,6 +179,43 @@ But having to add `as string` can become tedious. Instead, we'll override...
 meh, this doesn't seem possible. Will update if there's a workaround.
 -->
 
+## How do I annotate my `$refs` to avoid type warnings/errors?
+
+Some UI libraries will let you slap refs on their components to make direct method calls. Here's how you give type awareness to those refs.
+
+First, an example of a quick one-off approach:
+
+```ts
+export default Vue.extend({
+  methods: {
+    test() {
+      (this.$refs.dataTable as ElTable).clearSelection();
+    },
+  },
+});
+```
+
+If you refer to the same ref many times, or you have several refs, it's easier to create an interface:
+
+```ts
+import Vue, { VueConstructor } from 'vue';
+import { ElTable } from 'element-ui/types/table';
+import GoogleMap from '@/components/shared/GoogleMap.vue';
+
+// With this, you won't have to use "as" everywhere to cast the refs
+interface Refs {
+  $refs: {
+    name: HTMLInputElement
+    dataTable: ElTable,
+    map: InstanceType<typeof GoogleMap>;
+  }
+}
+
+export default (Vue as VueConstructor<Vue & Refs>).extend({
+  ...
+})
+```
+
 ## Conclusion
 
 If something's been bugging you with Vue + TypeScript, please open an issue to discuss having a recipe added!
