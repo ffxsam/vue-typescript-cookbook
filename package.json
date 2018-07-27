@@ -1,0 +1,14 @@
+{
+  "name": "vue-typescript-cookbook",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:ffxsam/vue-typescript-cookbook.git",
+  "author": "Sam Hulick <ffxsam@users.noreply.github.com>",
+  "license": "MIT",
+  "scripts": {
+    "doctoc": "doctoc --title '## Table of Contents' README.md"
+  },
+  "devDependencies": {
+    "doctoc": "^1.3.1"
+  }
+}
