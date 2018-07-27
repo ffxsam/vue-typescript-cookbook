@@ -178,3 +178,7 @@ But having to add `as string` can become tedious. Instead, we'll override...
 
 meh, this doesn't seem possible. Will update if there's a workaround.
 -->
+
+## Conclusion
+
+If something's been bugging you with Vue + TypeScript, please open an issue to discuss having a recipe added!
