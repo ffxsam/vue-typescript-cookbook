@@ -10,9 +10,10 @@ If you're like me, you're busy and don't have a lot of time to fight with tools 
 
 - [Initial set-up](#initial-set-up)
 - [What are the basic need-to-knows?](#what-are-the-basic-need-to-knows)
-- [I'm using Vuex `mapState` or `mapGetters`, and TypeScript is complaining about nonexistent properties on `this`.](#im-using-vuex-mapstate-or-mapgetters-and-typescript-is-complaining-about-nonexistent-properties-on-this)
+- [I'm using Vuex `mapState` or `mapGetters`, and TypeScript is saying the mapped state/getters don't exist on `this`.](#im-using-vuex-mapstate-or-mapgetters-and-typescript-is-saying-the-mapped-stategetters-dont-exist-on-this)
 - [How do I make a function outside the scope of the Vue component have the correct `this` context?](#how-do-i-make-a-function-outside-the-scope-of-the-vue-component-have-the-correct-this-context)
-- [I'm using vue-i18n and getting type errors because `TranslateResult` can't be set on a variable declared as a string.](#im-using-vue-i18n-and-getting-type-errors-because-translateresult-cant-be-set-on-a-variable-declared-as-a-string)
+- [How do I annotate my `$refs` to avoid type warnings/errors?](#how-do-i-annotate-my-refs-to-avoid-type-warningserrors)
+- [Conclusion](#conclusion)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
