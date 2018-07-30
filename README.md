@@ -13,6 +13,7 @@ If you're like me, you're busy and don't have a lot of time to fight with tools 
 - [I'm using Vuex `mapState` or `mapGetters`, and TypeScript is saying the mapped state/getters don't exist on `this`.](#im-using-vuex-mapstate-or-mapgetters-and-typescript-is-saying-the-mapped-stategetters-dont-exist-on-this)
 - [How do I make a function outside the scope of the Vue component have the correct `this` context?](#how-do-i-make-a-function-outside-the-scope-of-the-vue-component-have-the-correct-this-context)
 - [How do I annotate my `$refs` to avoid type warnings/errors?](#how-do-i-annotate-my-refs-to-avoid-type-warningserrors)
+- [Why am I losing type information when I import variables from other files/modules?](#why-am-i-losing-type-information-when-i-import-variables-from-other-filesmodules)
 - [Conclusion](#conclusion)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -216,6 +217,24 @@ export default (Vue as VueConstructor<Vue & Refs>).extend({
   ...
 })
 ```
+
+## Why am I losing type information when I import variables from other files/modules?
+
+When using TypeScript, if you wish to preserve full type information, never use `export default`. Export your variable like this instead:
+
+```ts
+export const myThing: SomeType = {
+  // ...
+}
+```
+
+Then, of course, import it as you'd expect in ES6:
+
+```ts
+import { myThing } from '@/some/file';
+```
+
+You'll notice now, when you mouse over the variable name or use it in your code, it will have full type information attached to it.
 
 ## Conclusion
 
