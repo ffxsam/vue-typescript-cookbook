@@ -13,6 +13,7 @@ If you're like me, you're busy and don't have a lot of time to fight with tools 
 - [I'm using Vuex `mapState` or `mapGetters`, and TypeScript is saying the mapped state/getters don't exist on `this`.](#im-using-vuex-mapstate-or-mapgetters-and-typescript-is-saying-the-mapped-stategetters-dont-exist-on-this)
 - [How do I make a function outside the scope of the Vue component have the correct `this` context?](#how-do-i-make-a-function-outside-the-scope-of-the-vue-component-have-the-correct-this-context)
 - [How do I annotate my `$refs` to avoid type warnings/errors?](#how-do-i-annotate-my-refs-to-avoid-type-warningserrors)
+- [How do I properly annotate mixins?](#how-do-i-properly-annotate-mixins)
 - [Why am I losing type information when I import variables from other files/modules?](#why-am-i-losing-type-information-when-i-import-variables-from-other-filesmodules)
 - [Conclusion](#conclusion)
 
