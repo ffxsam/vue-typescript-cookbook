@@ -218,6 +218,39 @@ export default (Vue as VueConstructor<Vue & Refs>).extend({
 })
 ```
 
+## How do I properly annotate mixins?
+
+When writing mixins, you'll want to extend Vue like you would with a component:
+
+```ts
+import Vue from 'vue';
+
+export const myMixin = Vue.extend({
+  data() {
+    return {
+      counter: 0,
+    };
+  },
+
+  methods: {
+    increase(by: number = 1) {
+      this.counter += by;
+    },
+  },
+});
+```
+
+Then in any Vue component you wish to use your mixin, make sure you extend the component's type definition with your mixin:
+
+```ts
+export default (Vue as VueConstructor<
+  Vue & InstanceType<typeof myMixin>
+>).extend({
+  mixins: [myMixin],
+```
+
+Now all of your mixin's methods/data/properties will be recognized, fully typed.
+
 ## Why am I losing type information when I import variables from other files/modules?
 
 When using TypeScript, if you wish to preserve full type information, never use `export default`. Export your variable like this instead:
