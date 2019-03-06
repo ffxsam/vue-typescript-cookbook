@@ -252,24 +252,6 @@ export default (Vue as VueConstructor<
 
 Now all of your mixin's methods/data/properties will be recognized, fully typed.
 
-## Why am I losing type information when I import variables from other files/modules?
-
-When using TypeScript, if you wish to preserve full type information, never use `export default`. Export your variable like this instead:
-
-```ts
-export const myThing: SomeType = {
-  // ...
-}
-```
-
-Then, of course, import it as you'd expect in ES6:
-
-```ts
-import { myThing } from '@/some/file';
-```
-
-You'll notice now, when you mouse over the variable name or use it in your code, it will have full type information attached to it.
-
 ## Conclusion
 
 If something's been bugging you with Vue + TypeScript, please open an issue to discuss having a recipe added!
