@@ -14,6 +14,7 @@ If you're like me, you're busy and don't have a lot of time to fight with tools 
 - [How do I make a function outside the scope of the Vue component have the correct `this` context?](#how-do-i-make-a-function-outside-the-scope-of-the-vue-component-have-the-correct-this-context)
 - [How do I annotate my `$refs` to avoid type warnings/errors?](#how-do-i-annotate-my-refs-to-avoid-type-warningserrors)
 - [How do I properly annotate mixins?](#how-do-i-properly-annotate-mixins)
+- [When I use an Array prop type, my component's properties (data, computed properties, etc) are shown as type errors!](#when-i-use-an-array-prop-type-my-components-properties-data-computed-properties-etc-are-shown-as-type-errors)
 - [Conclusion](#conclusion)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -250,6 +251,25 @@ export default (Vue as VueConstructor<
 ```
 
 Now all of your mixin's methods/data/properties will be recognized, fully typed.
+
+## When I use an Array prop type, my component's properties (data, computed properties, etc) are shown as type errors!
+
+This is a bug in Vue 2.x, and is easily resolved by using `PropType`:
+
+```ts
+import Vue, { PropType } from 'vue';
+import { Product } from '@/interfaces/product';
+
+export default Vue.extend({
+  name: 'MyComponent',
+  props: {
+    products: {
+      type: Array as PropType<Product[]>,
+      required: true,
+    },
+  },
+});
+```
 
 ## Conclusion
 
