@@ -271,6 +271,29 @@ export default Vue.extend({
 });
 ```
 
+## How to enable type check on default values and validator functions of a property?
+
+Like `PropType`, there is also `PropOptions`, which enables you to set the type information for the whole property, not only the type definition itself.
+
+
+```ts
+import Vue, { PropOptions } from 'vue';
+import { Product } from '@/interfaces/product';
+
+export default Vue.extend({
+  name: 'MyComponent',
+  props: {
+    products: {
+      type: Array,
+      default: () => [],
+      validator: function (value) {
+        // ... your validation code
+      }
+    } as PropOptions<Product[]>
+  },
+});
+```
+
 ## Conclusion
 
 If something's been bugging you with Vue + TypeScript, please open an issue to discuss having a recipe added!
