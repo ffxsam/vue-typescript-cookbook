@@ -15,6 +15,7 @@ If you're like me, you're busy and don't have a lot of time to fight with tools 
 - [How do I annotate my `$refs` to avoid type warnings/errors?](#how-do-i-annotate-my-refs-to-avoid-type-warningserrors)
 - [How do I properly annotate mixins?](#how-do-i-properly-annotate-mixins)
 - [When I use an Array prop type, my component's properties (data, computed properties, etc) are shown as type errors!](#when-i-use-an-array-prop-type-my-components-properties-data-computed-properties-etc-are-shown-as-type-errors)
+- [How to enable type check on default values and validator functions of a property?](#how-to-enable-type-check-on-default-values-and-validator-functions-of-a-property)
 - [Conclusion](#conclusion)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
