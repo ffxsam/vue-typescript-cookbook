@@ -84,7 +84,7 @@ export default Vue.extend({
 
 ## I'm using Vuex `mapState` or `mapGetters`, and TypeScript is saying the mapped state/getters don't exist on `this`.
 
-This is a [known bug](https://github.com/vuejs/vuex/issues/1353) in Vuex, and there's an outstanding [PR](https://github.com/vuejs/vuex/pull/1121). The bug only presents itself when using an object spread and including one or more computed properties:
+This is a [known bug](https://github.com/vuejs/vuex/issues/1353) in Vuex (more info in [this PR](https://github.com/vuejs/vuex/pull/1121)). The bug only presents itself when using an object spread and including one or more computed properties:
 
 ```js
 computed: {
